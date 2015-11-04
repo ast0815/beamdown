@@ -1,0 +1,31 @@
+#!/bin/bash
+
+BINDIR=`dirname $0`
+INFILE=$1
+
+USAGE="
+Beamdown
+
+Translates a markdown formatted file to LaTeX Beamer code.
+
+    Usage: $0 <filename>
+
+"
+
+# Do we have an input file?
+if [ -z $INFILE ]
+then
+    echo "$USAGE" >&2
+    exit 1
+fi
+
+# Which markdown intepreter are we using?
+if which markdown2 >/dev/null 2>/dev/null
+then
+    MARKDOWN="markdown2 -x cuddled-lists"
+else
+    echo "ERROR: No markdown interpreter found!" >&2
+    exit 1
+fi
+
+$MARKDOWN "$INFILE" | sed -f "$BINDIR/beamdown.sed" -

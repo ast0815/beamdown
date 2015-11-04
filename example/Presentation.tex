@@ -1,0 +1,64 @@
+\documentclass[mathserif,english]{beamer}
+\usetheme{CambridgeUS}
+\usecolortheme{dolphin}
+%\renewcommand{\inserttotalframenumber}{12}
+
+%%%% Customize the theme a little bit %%%%
+% No navigation symbols
+\beamertemplatenavigationsymbolsempty
+% Transparent covered elements
+\setbeamercovered{transparent}
+% Some bg color for block titles
+\setbeamercolor{block title alerted}{use={palette sidebar primary},bg=palette sidebar primary.fg}
+\setbeamercolor{block title}{use={palette sidebar primary}, bg=palette sidebar primary.fg}
+\setbeamercolor{block title example}{use={palette sidebar primary},bg=palette sidebar primary.fg}
+%\setbeamercolor{block body alerted}{bg=normal text.bg!90!black}
+%\setbeamercolor{block body}{bg=normal text.bg!90!black}
+%\setbeamercolor{block body example}{bg=normal text.bg!90!black}
+%%%% %%%%
+
+\usepackage{babel}                  % Wörtertrennung, etc.
+\usepackage[style=english]{csquotes}               % Anführungszeichen \enquote
+\usepackage[utf8]{inputenc}
+\usepackage{xspace}                 % setzt Leerzeichen, wenn welche hingehören
+
+\usepackage{tikz}   % Drawing stuff
+
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{units}                  % \unit[4]{V}, \unitfrac[5]{V}{cm}
+\usepackage{textcomp}               % Unicode-Zeichen
+\usepackage{gensymb}                % \celsius, \degree, \perthousand, \ohm, \micro
+\newcommand{\sups}[1]{\ensuremath{^{\text{#1}}}}    % superscript
+\newcommand{\subs}[1]{\ensuremath{_{\text{#1}}}}    % subscript
+\newcommand{\todo}[1]{%                             % highlighted todos
+    \colorbox{yellow}{
+        \color{red}
+        \textbf{TODO: #1}
+    }
+}
+\newcommand{\pdiff}[2]{\ensuremath{%                % partial diff, replacement for \diffp
+    \frac{\partial #1}{\partial #2}%
+}}
+\usepackage{esdiff}                 % Ableitungen in schön \diff{}{} oder \diffp{}{} <- diffp kaputt?
+\newcommand{\dd}{\mathrm{d}}        % d for integrals
+\newcommand{\orderof}{\ensuremath{\mathcal{O}}}        % "Order of" O
+
+\input{Commands.tex}
+\input{Title.tex}
+
+\begin{document}
+
+\frame{\titlepage}
+
+%\begin{frame}
+%    \begin{center}
+%        \begin{minipage}[c][0.5\textwidth]{0.7\textwidth}
+%            \tableofcontents
+%        \end{minipage}
+%    \end{center}
+%\end{frame}
+
+\input{Slides.tex}
+
+\end{document}
