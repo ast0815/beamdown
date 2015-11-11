@@ -17,9 +17,6 @@ s|</code>|`|g
 # Remove <p></p>
 s|</*p>||g
 
-#restore underscores
-s|</*em>|_|g
-
 #restore & in tables
 s|\&amp;|\&|g
 
