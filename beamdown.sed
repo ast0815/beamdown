@@ -17,6 +17,15 @@ s|</code>|`|g
 # Remove <p></p>
 s|</*p>||g
 
+#restore & in tables
+s|\&amp;|\&|g
+
+#these randomly appear
+s|<br />||g
+
+#double backslash at the end of tables:
+s|\\$|\\\\|g
+
 # Section
 s|<h1>\(.*\)</h1>|\\section{\1}|g
 
@@ -49,6 +58,9 @@ s|<strong>\(.*\)</strong>|\\alert{\1}|g
 
 # '<' character
 s|&lt;|<|g
+
+# '>' character
+s|&gt;|>|g
 
 # Figures
 s|<a href="\(.*\)">\(.*\)</a>|\\includegraphics[\2]{\1}|g
