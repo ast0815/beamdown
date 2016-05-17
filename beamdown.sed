@@ -86,3 +86,6 @@ s|=}|\\end{center}|g
 s|^\s*/---\+\s*$|\\begin{frame}[fragile]|g
 s|^\s*---\+/\s*$|\\end{frame}|g
 
+# Enquotes
+s|{"|\\enquote{|g
+s|"}|}|g
