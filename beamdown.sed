@@ -51,7 +51,8 @@ s|<li>|\\item |g
 s|</li>||g
 
 # Emphasis
-s|<em>\(.*\)</em>|\\emph{\1}|g
+s|<em>|\\emph{|g
+s|</em>|}|g
 
 # Strong
 s|<strong>\(.*\)</strong>|\\alert{\1}|g
