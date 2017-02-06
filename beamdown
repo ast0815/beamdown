@@ -23,6 +23,9 @@ fi
 if which markdown2 >/dev/null 2>/dev/null
 then
     MARKDOWN="markdown2 -x cuddled-lists -x code-friendly"
+elif python -m markdown --version >/dev/null 2>/dev/null
+then
+    MARKDOWN="python -m markdown"
 else
     echo "ERROR: No markdown interpreter found!" >&2
     exit 1
