@@ -15,7 +15,8 @@ s|<code>|\\verb`|g
 s|</code>|`|g
 
 # Remove <p></p>
-s|</*p>||g
+s|<p>|\n|g
+s|</p>||g
 
 #restore & in tables
 s|\&amp;|\&|g
