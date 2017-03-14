@@ -22,7 +22,7 @@ fi
 # Which markdown intepreter are we using?
 if which markdown2 >/dev/null 2>/dev/null
 then
-    MARKDOWN="markdown2 -x cuddled-lists -x code-friendly"
+    MARKDOWN="markdown2 -x cuddled-lists -x code-friendly -x fenced-code-blocks"
 elif python -m markdown --version >/dev/null 2>/dev/null
 then
     MARKDOWN="python -m markdown"
