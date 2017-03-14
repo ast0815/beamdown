@@ -15,6 +15,11 @@
 s|<code>|\\verb`|g
 s|</code>|`|g
 
+# Quotes
+s|<blockquote>|\\begin{quote}|g
+s|</blockquote>|\\end{quote}|g
+
+
 # Remove <p></p>
 s|<p>|\n|g
 s|</p>||g
