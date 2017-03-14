@@ -1,5 +1,6 @@
 # Code
 /<pre><code>/{
+    s|<pre><code>\([^$]\+\)$|\\begin{verbatim}\n\1|g
     s|<pre><code>|\\begin{verbatim}|g
     :top
     s|&lt;|<|g
